@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin-top: 3.125rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+.textContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+
+    & article {
+        font-size: 16px;
+    }
+}
+
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
