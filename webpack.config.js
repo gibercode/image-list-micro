@@ -52,7 +52,7 @@ module.exports = {
       },
       remotes: {
         searchBar:
-          "searchBar@searchBar@https://image-search-micro-rfcr.vercel.app/remoteEntry.js",
+          "searchBar@https://image-search-micro-rfcr.vercel.app/remoteEntry.js",
       },
       shared: {
         zustand: {
