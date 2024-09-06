@@ -1,18 +1,26 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const path = require("path");
 
 module.exports = {
   entry: "./src/index.tsx",
   output: {
-    publicPath: "http://localhost:3002/",
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "auto",
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
   mode: "development",
+  mode: "production",
   devServer: {
     hot: true,
     port: 3002,
+    historyApiFallback: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
   },
   output: {
     publicPath: "auto",
@@ -43,7 +51,8 @@ module.exports = {
         "./List": "./src/List",
       },
       remotes: {
-        searchBar: "searchBar@http://localhost:3001/remoteEntry.js",
+        searchBar:
+          "searchBar@searchBar@https://image-search-micro-rfcr.vercel.app/remoteEntry.js",
       },
       shared: {
         zustand: {
