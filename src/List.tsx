@@ -11,9 +11,7 @@ const App = () => {
     state: { photos = [], page, totalPages },
   } = usePhotoStore();
 
-  const handlePagination = (localPage: number) => {
-    setPage(localPage);
-  };
+  const handlePagination = (localPage: number) => setPage(localPage);
 
   const handleClose = () => setCurrent(null);
 
@@ -23,7 +21,6 @@ const App = () => {
         <>
           <div className="container">
             {photos.map((photo: any, index: number) => {
-              console.log("🚀 ~ {photos.map ~ photo:", photo);
               return (
                 <div
                   key={index}
